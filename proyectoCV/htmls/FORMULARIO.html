@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="display-1">Currículum</h1>
+    <div id="response"></div>
+<form id="miformulario" method="POST">
+    <!-- informacion básica-->
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <div class="col">
+                <label for="nombre" class="form-label"> Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" />
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <div class="row gx-5">
+                    <div class="col">
+                        <label for="cel" class="form-label"> Celular:</label>
+                        <input type="text" class="form-control" id="cel" />
+                    </div>
+                    <div class="col">
+                        <label for="edad" class="form-label"> Edad:</label>
+                        <input type="text" class="form-control" id="edad" />
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label for="carrera" class="form-label"> Carrera:</label>
+                <input type="text" class="form-control" id="carrera" />
+                <label for="direccion" class="form-label"> Dirección:</label>
+                <input type="text" class="form-control" id="direccion" />
+                <label for="idiomas" class="form-label"> Idiomas:</label>
+                <input type="text" class="form-control" id="idiomas" />
+            </div>
+        </div>
+    </div>
+    <label for="desc" class="form-label">Ingresa una breve descripción sobre ti:</label>
+    <input class="form-control" id="desc"></input>
+    <!--HABILIDADES-->
+    <h6 class="display-6"> Habilidades:</h6>
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <div class="col">
+                <label for="hab1" class="form-label">Habilidad 1:</label>
+                <input type="text" class="form-control" id="hab1" />
+                <label for="hab2" class="form-label">Habilidad 2:</label>
+                <input type="text" class="form-control" id="hab2" />
+                <label for="hab3" class="form-label">Habilidad 3:</label>
+                <input type="text" class="form-control" id="hab3" />
+            </div>
+            <div class="col">
+                <label for="hab4" class="form-label">Habilidad 4:</label>
+                <input type="text" class="form-control" id="hab4" />
+                <label for="hab5" class="form-label">Habilidad 5:</label>
+                <input type="text" class="form-control" id="hab5" />
+                <label for="hab6" class="form-label">Habilidad 6:</label>
+                <input type="text" class="form-control" id="hab6" />
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCACION -->
+    <h6 class="display-6"> Educación:</h6>
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <div class="col">
+                <label for="yearsED" class="form-label">Periodo de tiempo:</label>
+                <input type="text" class="form-control" id="yearsED" />
+                <label for="escuela" class="form-label">Escuela:</label>
+                <input type="text" class="form-control" id="escuela" />
+            </div>
+            <div class="col">
+                <label for="descED" class="form-label">Descripción:</label>
+                <input class="form-control" id="descED" ></input>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- EXPERIENCIA-->
+    <h6 class="display-6"> Experiencia: </h6>
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <div class="col">
+                <label for="yearsEX" class="form-label">Periodo de tiempo:</label>
+                <input type="text" class="form-control" id="yearsEX" />
+                <label for="empresa" class="form-label">Empresa:</label>
+                <input type="text" class="form-control" id="empresa" />
+            </div>
+            <div class="col">
+                <label for="descEX" class="form-label">Descripción:</label>
+                <input type="text" class="form-control" id="descEX" ></input>
+            </div>
+        </div>
+    </div>
+
+</form>
+    <br>
+    <!--CREATE-->
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg" id="botonEnviar">Crear persona</button>
+    </div>
+
+    <!--SEARCH-->
+    <div class="d-flex justify-content-center">
+        <h4 class="display-4">Visualización</h4>
+    </div>
+    <table id="tabla" class="table">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Edad</td>
+                <td>E-Mail</td>
+                <td>Celular</td>
+                <td>Carrera</td>
+                <td>Dirección</td>
+                <td>Idiomas</td>
+                <td>Decripción</td>
+                <td>Habilidad 1</td>
+                <td>Habilidad 2</td>
+                <td>Habilidad 3</td>
+                <td>Habilidad 4</td>
+                <td>Habilidad 5</td>
+                <td>Habilidad 6</td>
+                <td>Tiempo Educación</td>
+                <td>Escuela</td>
+                <td>Descripción Educación</td>
+                <td>Tiempo Experiencia</td>
+                <td>Profesion</td>
+                <td>Descripción Experiencia</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <br>
+    <!--SELECCIONAR PERSONA PARA HACER CURRíCULUM-->
+    <div class="container overflow-hidden text-center">
+        <p>Selecciona una persona para visualizar currículum</p>
+        <div class="row gx-5">
+            <div class="col">
+                <select class="form-select rounded col-md-8 mr-3" id="selector2" aria-label="Example select with button addon">
+                </select>
+            </div>
+            <div class="col">
+                <button class="btn btn-warning col-md-2" type="button" id="cv">Ir a currículum</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--DELETE-->
+    <h6 class="display-6">Eliminar currículum</h6>
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <div class="col">
+                <label for="formEliminar">Nombre: </label><input type="text" id="formEliminar" class="form-control col"></div>
+            <div class="col">
+                <button id="borrar" class="btn btn-danger btn-md col">Eliminar</button></div>
+        </div>
+    </div>
+
+    <!--UPDATE-->
+    <h6 class="display-6">Actualizar</h6>
+    <div class="container text-center mt-10">
+        <p>Primero, selecciona el nombre de la persona que quieras actualizar y reintroduce los demás campos</p>
+    </div>
+        <div class="container overflow-hidden text-center">
+            <div class="row gx-5">
+                <div class="col">
+                    <select class="form-select rounded col-md-8 mr-3" id="selector" aria-label="Example select with button addon">
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning col-md-2" type="button" id="botonActualizar">Actualizar</button>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
+<!--ESTE ES EL BUENOOOO-->
+<script>
+    $( document ).ready(function() {
+        $.ajax({
+            url: "http://localhost:8080/personaAPI/getAll",
+            method: "GET",
+            success: function(data) {
+                $.each(data,function (i,data){
+                    var row="<tr id='"+data.nombre+"'>"+
+                        "<td>"+data.nombre+"</td>"+
+                        "<td>"+data.edad+"</td>"+
+                        "<td>"+data.email+"</td>"+
+                        "<td>"+data.cel+"</td>"+
+                        "<td>"+data.carrera+"</td>"+
+                        "<td>"+data.direccion+"</td>"+
+                        "<td>"+data.idiomas+"</td>"+
+                        "<td>"+data.desc+"</td>"+
+                        "<td>"+data.hab1+"</td>"+
+                        "<td>"+data.hab2+"</td>"+
+                        "<td>"+data.hab3+"</td>"+
+                        "<td>"+data.hab4+"</td>"+
+                        "<td>"+data.hab5+"</td>"+
+                        "<td>"+data.hab6+"</td>"+
+                        "<td>"+data.yearsED+"</td>"+
+                        "<td>"+data.escuela+"</td>"+
+                        "<td>"+data.descED+"</td>"+
+                        "<td>"+data.yearsEX+"</td>"+
+                        "<td>"+data.empresa+"</td>"+
+                        "<td>"+data.descEX+"</td>"
+
+                    $("#tabla > tbody").append(row);
+                });
+            }
+        });
+        $.ajax({
+            url: "http://localhost:8080/personaAPI/nombres",
+            method: "GET",
+            success: function(nombres) {
+                nombres.forEach(function(nombre) {
+                    $("#selector").append("<option id='"+nombre+"selector"+"'>" + nombre + "</option>");
+                    $("#selector2").append("<option id='"+nombre+"selector"+"'>" + nombre + "</option>");
+                });
+            }
+        });
+        $("#cv").click(function (){
+            var nombre= $("#selector2").val();
+            $.ajax({
+                method: 'GET',
+                url:"http://localhost:8080/personaAPI/find/"+nombre,
+                datatype: "json",
+                contentType: 'application/json',
+                success: function(data){
+                    console.log("data",data);
+                    var nombre=data.nombre;
+                    var email=data.email;
+                    var edad=data.edad;
+                    var cel=data.cel;
+                    var carrera=data.carrera;
+                    var direccion=data.direccion;
+                    var idiomas=data.idiomas;
+                    var desc=data.desc;
+                    var hab1=data.hab1;
+                    var hab2=data.hab2;
+                    var hab3=data.hab3;
+                    var hab4=data.hab4;
+                    var hab5=data.hab5;
+                    var hab6=data.hab6;
+                    var yearsED=data.yearsED;
+                    var escuela=data.escuela;
+                    var descED=data.descED;
+                    var yearsEX=data.yearsEX;
+                    var empresa=data.empresa;
+                    var descEX=data.descEX;
+
+                    var url="DPPH_CVFFF.html?nombre"+encodeURIComponent(nombre)+
+                        "&nombre="+encodeURIComponent(nombre)+
+                        "&email="+ encodeURIComponent(email) +
+                        "&edad="+ encodeURIComponent(edad) +
+                        "&cel="+ encodeURIComponent(cel) +
+                        "&carrera="+ encodeURIComponent(carrera) +
+                        "&direccion="+ encodeURIComponent(direccion) +
+                        "&idiomas="+ encodeURIComponent(idiomas) +
+                        "&desc="+ encodeURIComponent(desc) +
+                        "&hab1="+ encodeURIComponent(hab1) +
+                        "&hab2="+ encodeURIComponent(hab2) +
+                        "&hab3="+ encodeURIComponent(hab3) +
+                        "&hab4="+ encodeURIComponent(hab4) +
+                        "&hab5="+ encodeURIComponent(hab5) +
+                        "&hab6="+ encodeURIComponent(hab6) +
+                        "&yearsED="+ encodeURIComponent(yearsED) +
+                        "&escuela="+ encodeURIComponent(escuela) +
+                        "&descED="+ encodeURIComponent(descED) +
+                        "&yearsEX="+ encodeURIComponent(yearsEX) +
+                        "&empresa="+ encodeURIComponent(empresa) +
+                        "&descEX="+ encodeURIComponent(descEX);
+                    alert(url);
+                    window.location.href=url;
+                }
+            });
+        })
+        $("#borrar").click(function (){
+            var nombre=$("#formEliminar").val();
+            $.ajax({
+                method: 'DELETE',
+                url:"http://localhost:8080/personaAPI/delete/"+nombre,
+                datatype: "json",
+                contentType: 'application/json',
+                success: function(data){
+                    $("#"+nombre+"selector").remove();
+                    $("#"+nombre).remove();
+                }
+            });
+        })
+        $("#botonEnviar").click(function (){
+            var usuario = {
+                nombre: $("#nombre").val(),
+                email: $("#email").val(),
+                edad: $("#edad").val(),
+                cel: $("#cel").val(),
+                carrera: $("#carrera").val(),
+                direccion: $("#direccion").val(),
+                idiomas: $("#idiomas").val(),
+                desc: $("#desc").val(),
+                hab1: $("#hab1").val(),
+                hab2: $("#hab2").val(),
+                hab3: $("#hab3").val(),
+                hab4: $("#hab4").val(),
+                hab5: $("#hab5").val(),
+                hab6: $("#hab6").val(),
+                yearsED: $("#yearsED").val(),
+                escuela: $("#escuela").val(),
+                descED: $("#descED").val(),
+                yearsEX: $("#yearsEX").val(),
+                empresa: $("#empresa").val(),
+                descEX: $("#descEX").val()
+            }
+            $.ajax({
+                method: 'POST',
+                url:"http://localhost:8080/personaAPI/save",
+                data: JSON.stringify(usuario),
+                datatype: "json",
+                contentType: 'application/json',
+                success: function(data){
+                    var row="<tr id='"+data.nombre+"'>"+
+                        "<td>"+data.nombre+"</td>"+
+                        "<td>"+data.edad+"</td>"+
+                        "<td>"+data.email+"</td>"+
+                        "<td>"+data.cel+"</td>"+
+                        "<td>"+data.carrera+"</td>"+
+                        "<td>"+data.direccion+"</td>"+
+                        "<td>"+data.idiomas+"</td>"+
+                        "<td>"+data.desc+"</td>"+
+                        "<td>"+data.hab1+"</td>"+
+                        "<td>"+data.hab2+"</td>"+
+                        "<td>"+data.hab3+"</td>"+
+                        "<td>"+data.hab4+"</td>"+
+                        "<td>"+data.hab5+"</td>"+
+                        "<td>"+data.hab6+"</td>"+
+                        "<td>"+data.yearsED+"</td>"+
+                        "<td>"+data.escuela+"</td>"+
+                        "<td>"+data.descED+"</td>"+
+                        "<td>"+data.yearsEX+"</td>"+
+                        "<td>"+data.empresa+"</td>"+
+                        "<td>"+data.descEX+"</td>"
+                    $("#tabla > tbody").append(row);
+
+                    $("#selector").append("<option id='"+data.nombre+"selector"+"'>" + data.nombre + "</option>");
+                    $("#selector2").append("<option id='"+data.nombre+"selector"+"'>" + data.nombre + "</option>");
+                }
+            });
+        })
+
+        $("#botonActualizar").click(function (){
+            var usuario = {
+                nombre: $("#nombre").val(),
+                email: $("#email").val(),
+                edad: $("#edad").val(),
+                cel: $("#cel").val(),
+                carrera: $("#carrera").val(),
+                direccion: $("#direccion").val(),
+                idiomas: $("#idiomas").val(),
+                desc: $("#desc").val(),
+                hab1: $("#hab1").val(),
+                hab2: $("#hab2").val(),
+                hab3: $("#hab3").val(),
+                hab4: $("#hab4").val(),
+                hab5: $("#hab5").val(),
+                hab6: $("#hab6").val(),
+                yearsED: $("#yearsED").val(),
+                escuela: $("#escuela").val(),
+                descED: $("#descED").val(),
+                yearsEX: $("#yearsEX").val(),
+                empresa: $("#empresa").val(),
+                descEX: $("#descEX").val()
+            }
+            $.ajax({
+                method: 'PUT',
+                url:"http://localhost:8080/personaAPI/update/"+usuario.nombre,
+                data: JSON.stringify(usuario),
+                datatype: "json",
+                contentType: 'application/json',
+                success: function(data){
+                    $("#"+usuario.nombre).remove();
+                    var row="<tr id='"+data.nombre+"'>"+
+                        "<td>"+data.nombre+"</td>"+
+                        "<td>"+data.edad+"</td>"+
+                        "<td>"+data.email+"</td>"+
+                        "<td>"+data.cel+"</td>"+
+                        "<td>"+data.carrera+"</td>"+
+                        "<td>"+data.direccion+"</td>"+
+                        "<td>"+data.idiomas+"</td>"+
+                        "<td>"+data.desc+"</td>"+
+                        "<td>"+data.hab1+"</td>"+
+                        "<td>"+data.hab2+"</td>"+
+                        "<td>"+data.hab3+"</td>"+
+                        "<td>"+data.hab4+"</td>"+
+                        "<td>"+data.hab5+"</td>"+
+                        "<td>"+data.hab6+"</td>"+
+                        "<td>"+data.yearsED+"</td>"+
+                        "<td>"+data.escuela+"</td>"+
+                        "<td>"+data.descED+"</td>"+
+                        "<td>"+data.yearsEX+"</td>"+
+                        "<td>"+data.empresa+"</td>"+
+                        "<td>"+data.descEX+"</td>"
+                    $("#tabla > tbody").append(row);
+                }
+            });
+        })
+
+    })
+</script>
+
+</html>
